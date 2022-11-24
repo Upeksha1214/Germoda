@@ -1,32 +1,30 @@
 const { ObjectId } = require('mongodb')
 const mongoose=require('mongoose')
 
-const paymentSchema=new mongoose.Schema({
-    paymentId:{
+const inquirySchema=new mongoose.Schema({
+
+    inquiryId:{
         type:ObjectId,
         required:true
     },
 
-    payDate:{
+    studentId:{
         type:String,
         required:true
     },
 
-    paymentTime:{
+    description:{
         type:String,
         required:true
     },
 
-    amount:{
+    email:{
         type:String,
         required:true
     },
-    
-    balance:{
-        type:String,
-        required:true
-    }
+
+
 
 })
 
-module.exports=mongoose.model('Post',paymentSchema)
+module.exports=mongoose.model('Post',inquirySchema)

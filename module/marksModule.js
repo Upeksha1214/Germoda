@@ -1,32 +1,37 @@
 const { ObjectId } = require('mongodb')
 const mongoose=require('mongoose')
 
-const paymentSchema=new mongoose.Schema({
-    paymentId:{
+const marksSchema=new mongoose.Schema({
+    examId:{
         type:ObjectId,
-        required:true
+        required:true,
     },
 
-    payDate:{
-        type:String,
-        required:true
-    },
-
-    paymentTime:{
-        type:String,
-        required:true
-    },
-
-    amount:{
+    marks:{
         type:String,
         required:true
     },
     
-    balance:{
+    className:{
+        type:String,
+        required:true
+    },
+
+    grade:{
+        type:String,
+        required:true
+    },
+
+    studentId:{
+        type:ObjectId,
+        required:true,
+    },
+
+    status:{
         type:String,
         required:true
     }
 
 })
 
-module.exports=mongoose.model('Post',paymentSchema)
+module.exports=mongoose.model('Post',marksSchema)
