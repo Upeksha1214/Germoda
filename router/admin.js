@@ -9,6 +9,7 @@ router.post('/createAdmin',async(req,res)=>{
 try{
     
         const admin =new Admin({
+            adminId:req.body.admin,
             userName:req.body.userName,
             passWord:req.body.passWord
         })
@@ -33,7 +34,7 @@ router.put('/updateAdmin/:userName',async(req,res)=>{
 
 router.delete('/deleteAdmin/:userName',async(req,res)=>{
     try{
-        const re=await Admin.findOneAndUpdate({userName: req.params.userName});
+        const re=await Admin.findOneAndDelete({userName: req.params.userName});
     re != null ? res.json({code:'200',message:'Account delete successfull',data:null}) : 
                        res.json({code:'500',message:'User Account delete Fail',data:null});
     }catch(error){
@@ -44,7 +45,6 @@ router.delete('/deleteAdmin/:userName',async(req,res)=>{
 router.get('/getAllAdmin',async(req,res)=>{
     try{
         const re=await Admin.find({});
-        console.log(re);
         re != null ? res.json({code:'200',message:'Account getAll successfull',data:re}) : 
                        res.json({code:'500',message:'User GEtall delete Fail',data:null});
                        

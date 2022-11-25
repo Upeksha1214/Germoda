@@ -23,7 +23,7 @@ const marksSchema=new mongoose.Schema({
     },
 
     studentId:{
-        type:ObjectId,
+        type:String,
         required:true,
     },
 

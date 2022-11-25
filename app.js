@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose=require('mongoose')
 const admin=require('./router/admin')
-const user=require('./router/user')
+const student=require('./router/student')
 
 const app= express();
 const port=8000;
@@ -19,7 +19,7 @@ con.on("open",()=>{
 })
 
 app.use('/admin',admin)
-app.use('/user',user)
+app.use('/student',student)
 
 
 app.listen(port,()=>{

@@ -2,9 +2,10 @@ const { ObjectId } = require('mongodb')
 const mongoose=require('mongoose')
 
 const userSchema=new mongoose.Schema({
-    studentId :{
-        type:ObjectId,
-        required:true,
+
+    studentId:{
+        type:String,
+        required:true
     },
 
     name :{
@@ -59,4 +60,4 @@ const userSchema=new mongoose.Schema({
 
 })
 
-module.exports=mongoose.model('Post',userSchema)
+module.exports=mongoose.model('Student',userSchema)

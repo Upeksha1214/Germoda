@@ -1,7 +1,12 @@
 // const { ObjectId } = require('mongodb')
 const mongoose=require('mongoose')
-
 const adminSchema=new mongoose.Schema({
+
+    adminId:{
+        type:String,
+        require:true
+    },
+
     userName :{
         type:String,
         required:true
@@ -13,4 +18,4 @@ const adminSchema=new mongoose.Schema({
     }
 });
 
-module.exports=mongoose.model('Post',adminSchema)
+module.exports=mongoose.model('Admin',adminSchema)
