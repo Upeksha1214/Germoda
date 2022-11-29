@@ -4,7 +4,7 @@ const mongoose=require('mongoose')
 const registerSchema=new mongoose.Schema({
 
     registerId:{
-        type:ObjectId,
+        type:String,
         required:true
     },
 
@@ -30,5 +30,5 @@ const registerSchema=new mongoose.Schema({
 
 })
 
-module.exports=mongoose.model('Post',registerSchema)
+module.exports=mongoose.model('Register',registerSchema)
 

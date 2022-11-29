@@ -3,7 +3,7 @@ const mongoose=require('mongoose')
 
 const paymentSchema=new mongoose.Schema({
     paymentId:{
-        type:ObjectId,
+        type:String,
         required:true
     },
 
@@ -29,4 +29,4 @@ const paymentSchema=new mongoose.Schema({
 
 })
 
-module.exports=mongoose.model('Post',paymentSchema)
+module.exports=mongoose.model('Payment',paymentSchema)

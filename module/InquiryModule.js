@@ -4,7 +4,7 @@ const mongoose=require('mongoose')
 const inquirySchema=new mongoose.Schema({
 
     inquiryId:{
-        type:ObjectId,
+        type:String,
         required:true
     },
 
@@ -27,4 +27,4 @@ const inquirySchema=new mongoose.Schema({
 
 })
 
-module.exports=mongoose.model('Post',inquirySchema)
+module.exports=mongoose.model('Inquiry',inquirySchema)

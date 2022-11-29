@@ -3,7 +3,7 @@ const mongoose=require('mongoose')
 
 const marksSchema=new mongoose.Schema({
     examId:{
-        type:ObjectId,
+        type:String,
         required:true,
     },
 
@@ -34,4 +34,4 @@ const marksSchema=new mongoose.Schema({
 
 })
 
-module.exports=mongoose.model('Post',marksSchema)
+module.exports=mongoose.model('Marks',marksSchema)

@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
-const Student=require('../module/userModule')
+const Student=require('../module/studentModule')
 
 router.post('/studentAdd',async(req,res)=>{
     try{

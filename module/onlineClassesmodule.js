@@ -4,7 +4,7 @@ const mongoose=require('mongoose')
 const onlineClassSchema=new mongoose.Schema({
     
     classId:{
-         type:ObjectId,
+         type:String,
          required:true
     },
 
@@ -34,4 +34,4 @@ const onlineClassSchema=new mongoose.Schema({
     }
 })
 
-module.exports=mongoose.model('Post',onlineClassSchema)
+module.exports=mongoose.model('OnlineClass',onlineClassSchema)
