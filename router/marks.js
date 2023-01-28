@@ -4,7 +4,7 @@ const Marks=require('../module/marksModule')
 
 router.post('/marksAdd',async(req,res)=>{
     try{
-        const re=await Marks.findOne({className:req.body.className,studentId:req.body.studentId});
+        const re=await Marks.findOne({className:req.body.className,studentId:req.body.studentId,examId:req.body.examId});
         if(re==null){
         const marks =new Marks({
             examId:req.body.examId,

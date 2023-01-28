@@ -3,7 +3,7 @@ const router=express.Router()
 const Student=require('../module/studentModule')
 
 router.post('/studentAdd',async(req,res)=>{
-    
+   
     try{
         const student= new Student ({
             studentId:req.body.studentId,
@@ -19,8 +19,7 @@ router.post('/studentAdd',async(req,res)=>{
             alResult:req.body.alResult
         })
 
-        console.log(studentId)
-        
+
         const response = await student.save();
         response != null ? res.json({code:'200',message:'Student create successfull',data:null}) : 
                        res.json({code:'500',message:'Student Create Fail',data:null});

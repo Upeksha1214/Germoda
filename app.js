@@ -7,6 +7,7 @@ const payment=require('./router/payment')
 const inquiry=require('./router/inquiry')
 const marks=require('./router/marks')
 const onlineClass=require('./router/onlineClass')
+const cors = require('cors')
 
 
 const app= express();
@@ -14,6 +15,7 @@ const port=8000;
 
 
 app.use(express.json());
+app.use(cors())
 
 
 const url='mongodb://localhost:27017' 
