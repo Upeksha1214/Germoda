@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors())
 
 
-const url='mongodb://localhost:27017' 
+const url=process.env.MONOGO_URL
 mongoose.connect(url,{useNewUrlParser : true})
 const con=mongoose.connection
 
