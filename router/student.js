@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Student = require("../module/studentModule");
 
-router.post("/studentAdd", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const student = new Student({
       studentId: req.body.studentId,
@@ -36,7 +36,7 @@ router.post("/studentAdd", async (req, res) => {
   }
 });
 
-router.put("/updateStudent/:studentId", async (req, res) => {
+router.put("//:studentId", async (req, res) => {
   try {
     const response = await Student.findOneAndUpdate(
       { studentId: req.params.studentId },
