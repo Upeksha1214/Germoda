@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "nodemon": "nodemon app.js"
   },
   "author": "",
@@ -13,7 +14,9 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongodb": "^4.12.0",
-    "mongoose": "^6.7.3",
+    "mongoose": "^6.7.3"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.20"
   }
 }

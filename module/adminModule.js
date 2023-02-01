@@ -1,21 +1,22 @@
-// const { ObjectId } = require('mongodb')
-const mongoose=require('mongoose')
-const adminSchema=new mongoose.Schema({
-
-    adminId:{
-        type:String,
-        require:true
+const mongoose = require("mongoose");
+const adminSchema = new mongoose.Schema(
+  {
+    adminId: {
+      type: String,
+      require: true,
     },
 
-    userName :{
-        type:String,
-        required:true
+    userName: {
+      type: String,
+      required: true,
     },
 
-    passWord :{
-        type:String,
-        required:true
-    }
-});
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  { collection: "germoda-admin", autoCreate: true }
+);
 
-module.exports=mongoose.model('Admin',adminSchema)
+module.exports = mongoose.model("Admin", adminSchema);

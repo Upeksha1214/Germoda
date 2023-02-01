@@ -8,7 +8,7 @@ const inquiry=require('./router/inquiry')
 const marks=require('./router/marks')
 const onlineClass=require('./router/onlineClass')
 const cors = require('cors')
-
+require('dotenv').config()
 
 const app= express();
 const port=8000;
@@ -18,12 +18,12 @@ app.use(express.json());
 app.use(cors())
 
 
-const url=process.env.MONOGO_URL
+const url=process.env.MONGO_URL
 mongoose.connect(url,{useNewUrlParser : true})
 const con=mongoose.connection
 
 con.on("open",()=>{
-    console.log('monogoDB conneted..!')
+    console.log('monogoDB connected..!')
 })
 
 app.use('/admin',admin)
