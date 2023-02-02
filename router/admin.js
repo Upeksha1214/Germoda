@@ -12,7 +12,7 @@ router.post("/createAdmin", async (req, res) => {
     const response = await admin.save();
     response != null
       ? res.json({
-          code: "200",
+          code: "200", 
           message: "Account create successfull",
           data: null,
         })

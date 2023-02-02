@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Student = require("../module/studentModule");
+const Student = require("../model/studentModule");
 
 router.post("/", async (req, res) => {
   try {
@@ -8,6 +8,7 @@ router.post("/", async (req, res) => {
       studentId: req.body.studentId,
       name: req.body.name,
       email: req.body.email,
+      password:req.body.password,
       address: req.body.address,
       nic: req.body.nic,
       gender: req.body.gender,
@@ -16,6 +17,8 @@ router.post("/", async (req, res) => {
       courseDuration: req.body.courseDuration,
       olResult: req.body.olResult,
       alResult: req.body.alResult,
+      country:req.body.country,
+      state:req.body.state,
     });
 
     const response = await student.save();
