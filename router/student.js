@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Student = require("../model/studentModule");
+const Student = require("../module/studentModule");
 
 router.post("/", async (req, res) => {
   try {
@@ -38,6 +38,13 @@ router.post("/", async (req, res) => {
     res.send("Err" + error);
   }
 });
+
+router.post('/login',async(req,res)=>{
+  const response= await Student.findOne({email : req.body.email , password : req.body.password});
+  response!=null ? res.json({code:'200',message:'login  successfull',data:response}) : 
+                  res.json({code:'500',message:'login faild',data:null})
+
+})
 
 router.put("//:studentId", async (req, res) => {
   try {
