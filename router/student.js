@@ -101,4 +101,11 @@ router.get("/getAllStudent", async (req, res) => {
   }
 });
 
+router.post('/login',async(req,res)=>{
+  const response= await Student.findOne({email : req.body.email , password : req.body.password});
+  response!=null ? res.json({code:'200',message:'login  successfull',data:response.surname}) : 
+                  res.json({code:'500',message:'login faild',data:null})
+
+});
+
 module.exports = router;
