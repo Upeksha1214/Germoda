@@ -2,7 +2,7 @@ const express=require('express')
 const router=express.Router()
 const Register=require('../module/registerModule')
 
-router.post('/registerStudent',async(req,res)=>{
+router.post('/',async(req,res)=>{
     try{
         const re=await Register.findOne({studentId:req.body.studentId});
         if(re==null){
@@ -24,7 +24,7 @@ router.post('/registerStudent',async(req,res)=>{
     }
 })
 
-router.put('/registerUpdate/:registerId',async(req,res)=>{
+router.put('//:registerId',async(req,res)=>{
     try{
         const response=await Register.findOneAndUpdate({registerId:req.params.registerId},req.body)
         response!=null ? res.json({code:'200',message:'Register update successfull',data:null}) : 
@@ -34,7 +34,7 @@ router.put('/registerUpdate/:registerId',async(req,res)=>{
     }
 })
 
-router.delete('/registerDelete/:registerId',async(req,res)=>{
+router.delete('//:registerId',async(req,res)=>{
     try{
         const response=await Register.findOneAndDelete({registerId:req.params.registerId},req.body)
         response!=null ? res.json({code:'200',message:'Register update successfull',data:null}) : 
@@ -44,7 +44,7 @@ router.delete('/registerDelete/:registerId',async(req,res)=>{
     }
 })
 
-router.get('/getAllResgister',async(req,res)=>{
+router.get('/',async(req,res)=>{
     try{
         const re=await Register.find({});
         re != null ? res.json({code:'200',message:'Register getAll successfull',data:re}) : 

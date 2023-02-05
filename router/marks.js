@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Marks = require("../module/marksModule");
 
-router.post("/marksAdd", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const re = await Marks.findOne({
       className: req.body.className,

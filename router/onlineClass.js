@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const OnlineClass = require("../module/onlineClassesmodule");
 
-router.post("/onlineClassAdd", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const onlineClass = new OnlineClass({
       classId: req.body.classId,
@@ -25,7 +25,7 @@ router.post("/onlineClassAdd", async (req, res) => {
   }
 });
 
-router.put("/onlineClassUpdate/:classId", async (req, res) => {
+router.put("//:classId", async (req, res) => {
   try {
     const response = await OnlineClass.findOneAndUpdate(
       { classId: req.params.classId },
@@ -47,7 +47,7 @@ router.put("/onlineClassUpdate/:classId", async (req, res) => {
   }
 });
 
-router.delete("/onlineClassDelete/:classId", async (req, res) => {
+router.delete("//:classId", async (req, res) => {
   try {
     const response = await OnlineClass.findOneAndDelete(
       { classId: req.params.classId },
@@ -69,7 +69,7 @@ router.delete("/onlineClassDelete/:classId", async (req, res) => {
   }
 });
 
-router.get("/onlineClassGetAll", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const re = await OnlineClass.find({});
     re != null

@@ -82,7 +82,7 @@ router.delete("/deleteStudent/:studentId", async (req, res) => {
   }
 });
 
-router.get("/getAllStudent", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const re = await Student.find({});
     re != null

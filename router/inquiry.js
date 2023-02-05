@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Inquiry = require("../module/inquiryModule");
 
-router.post("/inquiryAdd", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const re = await Inquiry.findOne({ studentId: req.body.studentId });
     if (re == null) {
@@ -32,7 +32,7 @@ router.post("/inquiryAdd", async (req, res) => {
   }
 });
 
-router.put("/inquiryUpdate/:inquiryId", async (req, res) => {
+router.put("//:inquiryId", async (req, res) => {
   try {
     const response = await Inquiry.findOneAndUpdate(
       { inquiryId: req.params.inquiryId },
@@ -50,7 +50,7 @@ router.put("/inquiryUpdate/:inquiryId", async (req, res) => {
   }
 });
 
-router.delete("/inquiryDelete/:inquiryId", async (req, res) => {
+router.delete("//:inquiryId", async (req, res) => {
   try {
     const response = await Inquiry.findOneAndDelete(
       { inquiryId: req.params.inquiryId },
@@ -68,7 +68,7 @@ router.delete("/inquiryDelete/:inquiryId", async (req, res) => {
   }
 });
 
-router.get("/inquiryGetAll", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const re = await Inquiry.find({});
     re != null

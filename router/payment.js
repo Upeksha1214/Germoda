@@ -2,7 +2,7 @@ const express=require('express')
 const router=express.Router()
 const Payment=require('../module/paymentModule')
 
-router.post('/paymentAdd',async(req,res)=>{
+router.post('/',async(req,res)=>{
     try{
         const payment=new Payment({
             paymentId:req.body.paymentId,
@@ -19,7 +19,7 @@ router.post('/paymentAdd',async(req,res)=>{
     }
 })
 
-router.put('/paymentUpdate/:paymentId',async(req,res)=>{
+router.put('//:paymentId',async(req,res)=>{
     try{
         const response=await Payment.findOneAndUpdate({paymentId:req.params.paymentId},req.body)
         response!=null ? res.json({code:'200',message:'Payment update successfull',data:null}) : 
@@ -29,13 +29,13 @@ router.put('/paymentUpdate/:paymentId',async(req,res)=>{
     }
 })
 
-router.delete('/paymentDelete/:paymentId',async(req,res)=>{
+router.delete('//:paymentId',async(req,res)=>{
     const response=await Payment.findOneAndDelete({paymentId:req.params.paymentId},req.body)
         response!=null ? res.json({code:'200',message:'Payment delete successfull',data:null}) : 
                    res.json({code:'500',message:'Payment delete faild',data:null})
 })
  
-router.get('/paymentAll',async(req,res)=>{
+router.get('/',async(req,res)=>{
     try{
         const re=await Payment.find({});
         re != null ? res.json({code:'200',message:'Payment getAll successfull',data:re}) : 
