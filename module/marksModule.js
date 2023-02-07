@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const marksSchema = new mongoose.Schema({
-  examId: {
+  inquiryId: {
     type: String,
     required: true,
   },

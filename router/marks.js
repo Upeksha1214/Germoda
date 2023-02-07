@@ -7,11 +7,12 @@ router.post("/", async (req, res) => {
     const re = await Marks.findOne({
       className: req.body.className,
       studentId: req.body.studentId,
-      examId: req.body.examId,
+      inquiryId: req.body.inquiryId,
     });
     if (re == null) {
       const marks = new Marks({
-        examId: req.body.examId,
+        
+        inquiryId: req.body.inquiryId,
         marks: req.body.marks,
         className: req.body.className,
         grade: req.body.grade,
